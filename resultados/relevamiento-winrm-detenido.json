@@ -1,0 +1,386 @@
+{
+  "graph": {
+    "nodes": [
+      {
+        "id": "SITE-INFERRED",
+        "kinds": [
+          "Site"
+        ],
+        "properties": {
+          "name": "Inferred",
+          "domain": "empresa.test"
+        }
+      },
+      {
+        "id": "SUBNET-192-168-50-0-24",
+        "kinds": [
+          "Subnet"
+        ],
+        "properties": {
+          "name": "192.168.50.0/24",
+          "subnet": "192.168.50.0/24",
+          "domain": "empresa.test",
+          "site": "Inferred",
+          "description": "Not configured in AD Sites",
+          "network_address": "192.168.50.0",
+          "broadcast_address": "192.168.50.255",
+          "netmask": "255.255.255.0",
+          "host_count": 3,
+          "subnet_name": "Inferred-192.168.50.0-24"
+        }
+      },
+      {
+        "id": "S-1-5-21-4231531772-4095788753-740404788-1000",
+        "kinds": [
+          "Computer"
+        ],
+        "properties": {
+          "ip_addresses": [
+            "192.168.50.10"
+          ],
+          "open_ports": [
+            53,
+            88,
+            135,
+            139,
+            389,
+            445,
+            464,
+            636,
+            3268,
+            3269
+          ]
+        }
+      },
+      {
+        "id": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1000-NETLOGON",
+        "kinds": [
+          "FileShare"
+        ],
+        "properties": {
+          "name": "NETLOGON",
+          "discovered_by": "LUCAS.PEREZ@EMPRESA.TEST",
+          "description": "",
+          "share_type": 0,
+          "computer_name": "DC01",
+          "ip_addresses": [
+            "192.168.50.10"
+          ],
+          "accessible": true
+        }
+      },
+      {
+        "id": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1000-SYSVOL",
+        "kinds": [
+          "FileShare"
+        ],
+        "properties": {
+          "name": "SYSVOL",
+          "discovered_by": "LUCAS.PEREZ@EMPRESA.TEST",
+          "description": "",
+          "share_type": 0,
+          "computer_name": "DC01",
+          "ip_addresses": [
+            "192.168.50.10"
+          ],
+          "accessible": true
+        }
+      },
+      {
+        "id": "S-1-5-21-4231531772-4095788753-740404788-1110",
+        "kinds": [
+          "Computer"
+        ],
+        "properties": {
+          "ip_addresses": [
+            "192.168.50.10",
+            "192.168.50.20"
+          ],
+          "open_ports": [
+            53,
+            88,
+            135,
+            139,
+            389,
+            445,
+            464,
+            636,
+            3268,
+            3269
+          ]
+        }
+      },
+      {
+        "id": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1110-NETLOGON",
+        "kinds": [
+          "FileShare"
+        ],
+        "properties": {
+          "name": "NETLOGON",
+          "discovered_by": "LUCAS.PEREZ@EMPRESA.TEST",
+          "description": "",
+          "share_type": 0,
+          "computer_name": "CL01",
+          "ip_addresses": [
+            "192.168.50.10",
+            "192.168.50.20"
+          ],
+          "accessible": true
+        }
+      },
+      {
+        "id": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1110-SYSVOL",
+        "kinds": [
+          "FileShare"
+        ],
+        "properties": {
+          "name": "SYSVOL",
+          "discovered_by": "LUCAS.PEREZ@EMPRESA.TEST",
+          "description": "",
+          "share_type": 0,
+          "computer_name": "CL01",
+          "ip_addresses": [
+            "192.168.50.10",
+            "192.168.50.20"
+          ],
+          "accessible": true
+        }
+      },
+      {
+        "id": "S-1-5-21-4231531772-4095788753-740404788-1111",
+        "kinds": [
+          "Computer"
+        ],
+        "properties": {
+          "ip_addresses": [
+            "192.168.50.10",
+            "192.168.50.30"
+          ],
+          "open_ports": [
+            53,
+            88,
+            135,
+            139,
+            389,
+            445,
+            464,
+            636,
+            3268,
+            3269
+          ]
+        }
+      },
+      {
+        "id": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1111-NETLOGON",
+        "kinds": [
+          "FileShare"
+        ],
+        "properties": {
+          "name": "NETLOGON",
+          "discovered_by": "LUCAS.PEREZ@EMPRESA.TEST",
+          "description": "",
+          "share_type": 0,
+          "computer_name": "CL02",
+          "ip_addresses": [
+            "192.168.50.10",
+            "192.168.50.30"
+          ],
+          "accessible": true
+        }
+      },
+      {
+        "id": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1111-SYSVOL",
+        "kinds": [
+          "FileShare"
+        ],
+        "properties": {
+          "name": "SYSVOL",
+          "discovered_by": "LUCAS.PEREZ@EMPRESA.TEST",
+          "description": "",
+          "share_type": 0,
+          "computer_name": "CL02",
+          "ip_addresses": [
+            "192.168.50.10",
+            "192.168.50.30"
+          ],
+          "accessible": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "start": {
+          "value": "SITE-INFERRED",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "S-1-5-21-4231531772-4095788753-740404788",
+          "match_by": "id"
+        },
+        "kind": "PartOfDomain"
+      },
+      {
+        "start": {
+          "value": "SUBNET-192-168-50-0-24",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "SITE-INFERRED",
+          "match_by": "id"
+        },
+        "kind": "PartOf"
+      },
+      {
+        "start": {
+          "value": "S-1-5-21-4231531772-4095788753-740404788-1000",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "SUBNET-192-168-50-0-24",
+          "match_by": "id"
+        },
+        "kind": "LocatedIn"
+      },
+      {
+        "start": {
+          "value": "S-1-5-21-4231531772-4095788753-740404788-1000",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1000-NETLOGON",
+          "match_by": "id"
+        },
+        "kind": "ExposeInterface",
+        "properties": {
+          "protocol": "smb",
+          "share_name": "NETLOGON",
+          "ip_addresses": [
+            "192.168.50.10"
+          ]
+        }
+      },
+      {
+        "start": {
+          "value": "S-1-5-21-4231531772-4095788753-740404788-1000",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1000-SYSVOL",
+          "match_by": "id"
+        },
+        "kind": "ExposeInterface",
+        "properties": {
+          "protocol": "smb",
+          "share_name": "SYSVOL",
+          "ip_addresses": [
+            "192.168.50.10"
+          ]
+        }
+      },
+      {
+        "start": {
+          "value": "S-1-5-21-4231531772-4095788753-740404788-1110",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "SUBNET-192-168-50-0-24",
+          "match_by": "id"
+        },
+        "kind": "LocatedIn"
+      },
+      {
+        "start": {
+          "value": "S-1-5-21-4231531772-4095788753-740404788-1110",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1110-NETLOGON",
+          "match_by": "id"
+        },
+        "kind": "ExposeInterface",
+        "properties": {
+          "protocol": "smb",
+          "share_name": "NETLOGON",
+          "ip_addresses": [
+            "192.168.50.10",
+            "192.168.50.20"
+          ]
+        }
+      },
+      {
+        "start": {
+          "value": "S-1-5-21-4231531772-4095788753-740404788-1110",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1110-SYSVOL",
+          "match_by": "id"
+        },
+        "kind": "ExposeInterface",
+        "properties": {
+          "protocol": "smb",
+          "share_name": "SYSVOL",
+          "ip_addresses": [
+            "192.168.50.10",
+            "192.168.50.20"
+          ]
+        }
+      },
+      {
+        "start": {
+          "value": "S-1-5-21-4231531772-4095788753-740404788-1111",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "SUBNET-192-168-50-0-24",
+          "match_by": "id"
+        },
+        "kind": "LocatedIn"
+      },
+      {
+        "start": {
+          "value": "S-1-5-21-4231531772-4095788753-740404788-1111",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1111-NETLOGON",
+          "match_by": "id"
+        },
+        "kind": "ExposeInterface",
+        "properties": {
+          "protocol": "smb",
+          "share_name": "NETLOGON",
+          "ip_addresses": [
+            "192.168.50.10",
+            "192.168.50.30"
+          ]
+        }
+      },
+      {
+        "start": {
+          "value": "S-1-5-21-4231531772-4095788753-740404788-1111",
+          "match_by": "id"
+        },
+        "end": {
+          "value": "FILESHARE-S-1-5-21-4231531772-4095788753-740404788-1111-SYSVOL",
+          "match_by": "id"
+        },
+        "kind": "ExposeInterface",
+        "properties": {
+          "protocol": "smb",
+          "share_name": "SYSVOL",
+          "ip_addresses": [
+            "192.168.50.10",
+            "192.168.50.30"
+          ]
+        }
+      }
+    ]
+  },
+  "domain_info": {
+    "domain_name": "empresa.test",
+    "domain_sid": "S-1-5-21-4231531772-4095788753-740404788",
+    "distinguished_name": "DC=empresa,DC=test",
+    "description": ""
+  }
+}

@@ -34,3 +34,11 @@ Thumbs.db
 *.ccache
 *.kirbi
 
+# Entorno Python del laboratorio
+.venv/
+
+# Evidencias seleccionadas del laboratorio academico
+!resultados/relevamiento-inicial.json
+!resultados/relevamiento-inicial.log
+!resultados/relevamiento-winrm-detenido.json
+!resultados/relevamiento-winrm-detenido.log
